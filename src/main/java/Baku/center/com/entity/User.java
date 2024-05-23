@@ -16,9 +16,16 @@ public class User {
     private Long userId;
     @Column(nullable = false)
     private String fullname;
+    @Column(nullable = false,length = 15)
+    private Long number;
+
     @Column(unique = true,updatable = false,nullable = false)
     private String email;
     @Column(unique = true,nullable = false,length = 15)
     private String password;
+
+    @ManyToOne
+    @JoinColumn(name = "roleId")
+    private Roles role;
 
 }

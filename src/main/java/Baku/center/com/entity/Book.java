@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
@@ -24,7 +25,7 @@ public class Book {
     private String bookAuthor;
     @CreationTimestamp
     @Column(name = "publishYear")
-    private LocalDateTime publishYear;
+    private LocalDate publishYear;
     @ManyToOne
     @JoinColumn(name = "shop_id",referencedColumnName = "shopId")
     private Shop shop;
